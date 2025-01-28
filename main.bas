@@ -9,6 +9,9 @@ Const SCREEN_SCALE = 2
 ' Ref: https://qb64.com/wiki/SCREEN
 Let buffer& = _NewImage(WINDOW_WIDTH, WINDOW_HEIGHT, 32)
 Let scaled& = _NewImage(WINDOW_WIDTH * SCREEN_SCALE, WINDOW_HEIGHT * SCREEN_SCALE, 32)
+Let cornflower_blue& = _RGB32(&H64, &H95, &HED)
+
+Let qb64_logo& = _LoadImage("QB64.png", 32)
 
 Screen scaled&
 _Dest buffer&
@@ -17,16 +20,23 @@ _Display
 
 _Title "QB64 Starter"
 
+' print text with transparent bg
+_PrintMode _KeepBackground
+
 
 Do
   _Limit TARGET_FPS
 
-  Cls , _RGB(&H64, &H95, &HED)
+  Cls , cornflower_blue&
 
+  Locate 3, 3
   Print "Hello QB64!"
 
+  ' _PutImage (0, 0), qb64_logo&
+  _PutImage ((WINDOW_WIDTH - _Width(qb64_logo&)) \ 2, (WINDOW_HEIGHT - _Height(qb64_logo&)) \ 2), qb64_logo&
 
-  Locate 11, 1
+
+  Locate 12, 1
   Print "Esc - quit";
 
   ' Apply the screen scaling
