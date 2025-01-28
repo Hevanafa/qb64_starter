@@ -1,4 +1,5 @@
 $Debug
+$ExeIcon:'./qb64.ico'
 
 Const TARGET_FPS = 60
 Const K_ESC = 27
