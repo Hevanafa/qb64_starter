@@ -1,5 +1,5 @@
 $Debug
-$ExeIcon:'./qb64.ico'
+$ExeIcon:'./qb64pe.ico'
 
 Option _Explicit
 ' Make it like Lua
@@ -22,7 +22,7 @@ Screen scaled: _Dest buffer: _Delay 0.1: _Display
 
 ' 32-bit colours should be used after changing the screen mode
 Dim qb64_logo
-qb64_logo = _LoadImage("QB64.png", 32)
+qb64_logo = _LoadImage("qb64pe.png", 32)
 
 Dim As Long cornflower_blue, white
 cornflower_blue = _RGB32(&H64, &H95, &HED) ' &hFF6495ED
